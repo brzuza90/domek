@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Budujemy Domek</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        span {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            font-size: 24px;
+            background-color: brown;
+            padding: 10px 20px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        div {
+            position: absolute;
+            top: 90%;
+            left: 10%;
+            width: 0;
+            height: 0;
+        }
+
+        .dom {
+            background-color: brown;
+            transition: 2s;
+        }
+
+        .dach {
+            background-color: #000;
+            z-index: -1;
+            transition: 2.5s 0.3s;
+        }
+
+        .komin {
+            background-color: gray;
+            transition: 2.6s 0.5s;
+            z-index: -2;
+        }
+
+        .oknoL {
+            background-color: orange;
+            transition: 2.2s 0.7s;
+        }
+
+        .oknoP {
+            background-color: orange;
+            transition: 2.2s 1s;
+        }
+
+        .drzwi {
+            background-color: gray;
+            transition: 2s 0.6s;
+        }
+
+        span:hover+.dom {
+            width: 50vh;
+            height: 25vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        span:hover~.dach {
+            top: calc(50% - 12.5vh);
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: calc(50vh/1.41);
+            height: calc(50vh/1.41);
+        }
+
+        span:hover~.komin {
+            top: 18%;
+            left: 55%;
+            width: 7vh;
+            height: 12vh;
+        }
+
+        span:hover~.oknoL {
+            top: 45%;
+            left: calc(50% - 20vh);
+            width: 9vh;
+            height: 7vh;
+        }
+
+        span:hover~.oknoP {
+            top: 45%;
+            left: calc(50% + 10vh);
+            width: 9vh;
+            height: 7vh;
+        }
+
+        span:hover~.drzwi {
+            top: 50%;
+            left: calc(50% - 4vh);
+            width: 8vh;
+            height: 12.5vh;
+        }
+    </style>
+</head>
+
+<body>
+    <span>Budujemy Domek</span>
+    <div class="dom"></div>
+    <div class="dach"></div>
+    <div class="komin"></div>
+    <div class="oknoL"></div>
+    <div class="oknoP"></div>
+    <div class="drzwi"></div>
+</body>
+
+</html>
